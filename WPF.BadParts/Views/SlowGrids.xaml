@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="WPF.BadParts.Views.SlowGrids"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical">
+            <Button x:Name="LoadGridButton"
+                    Content="Load Grid"
+                    Margin="10"
+                    Click="LoadGridButton_Click" />
+
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Lookups: "
+                           Margin="5" />
+                <TextBlock Text="{Binding VisualTreeLookups}"
+                           Margin="5" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Value Changes: "
+                           Margin="5" />
+                <TextBlock Text="{Binding ScrollValueChanges}"
+                           Margin="5" />
+            </StackPanel>
+        </StackPanel>
+
+        <ScrollBar x:Name="GroupScroller"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   ValueChanged="GroupScroller_ValueChanged"
+                   Minimum="0"
+                   Maximum="100" />
+
+        <ScrollViewer x:Name="GridScrollViewer"
+                      Grid.Column="2"
+                      MaxHeight="10000"
+                      MaxWidth="10000"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Disabled">
+            <StackPanel x:Name="GridStackPanel"
+                        Orientation="Horizontal"
+                        MaxHeight="9000"
+                        MaxWidth="9000" />
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

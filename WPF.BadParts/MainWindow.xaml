@@ -1,0 +1,46 @@
+﻿<Window x:Class="WPF.BadParts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WPF.BadParts"
+        Height="350"
+        Width="525">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border x:Name="FrameBorder"
+                Background="DarkGray"
+                Margin="4">
+            <Border x:Name="ContentBorder"
+                    Background="LightGray"
+                    Margin="4" />
+        </Border>
+
+        <StackPanel Grid.Row="1"
+                    Margin="4"
+                    Orientation="Horizontal">
+            <Button x:Name="ButtonTest"
+                    Content="Button Test"
+                    Margin="4"
+                    Click="ButtonTest_Click" />
+            <Button x:Name="GaugeTest"
+                    Content="Gauge Test"
+                    Margin="4"
+                    Click="GaugeTest_Click" />
+            <Button x:Name="GaugePlusTest"
+                    Content="Gauge Plus Test"
+                    Margin="4"
+                    Click="GaugePlusTest_Click" />
+            <Button x:Name="SlowScrolling"
+                    Content="Slow Scrolling"
+                    Margin="4"
+                    Click="SlowScrolling_Click" />
+            <Button x:Name="SyncScrolling"
+                    Content="Sync Scrolling"
+                    Margin="4"
+                    Click="SyncScrolling_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
